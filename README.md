@@ -1,4 +1,4 @@
 SpaceInvaderJs
 ==============
 
-2D game in Javascript
+My first attempt at making a 2D game in Javascript using Canvas.
