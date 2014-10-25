@@ -6,6 +6,7 @@
     //stores the width and height of the canvas
     var gameSize = { x: canvas.width, y: canvas.height };
 
+
     var self = this;
     //function the runs all the main game logic
     var tick = function() {
@@ -18,7 +19,13 @@
   };
 
   Game.prototype = {
-    
+    update: function() {
+
+    },
+
+    draw: function(screen, gameSize) {
+      screen.fillRect(30, 30, 40, 40);
+    }
 
   };
 
