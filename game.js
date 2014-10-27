@@ -24,7 +24,9 @@
     },
 
     draw: function(screen, gameSize) {
-      screen.fillRect(30, 30, 40, 40);
+      for (var i = 0; i < this.bodies.length; i++) {
+        drawRect(screen, this.bodies[i]);
+      }
     }
 
   };
@@ -39,6 +41,13 @@
     update: function() {
 
     }
+  };
+
+  //function that draws the bullets and the invaders
+  var drawRect = function(screen, body) {
+    screen.fillRect(body.center.x - body.size.x / 2,
+                    body.center.y - body.size.y / 2,
+                    body.size.x, body.size.y);
   };
 
   window.onload = function() {
