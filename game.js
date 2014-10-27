@@ -29,6 +29,18 @@
 
   };
 
+  var Player = function(game, gameSize) {
+    this.game = game;
+    this.size = { x: 15, y:15 };
+    this.center = { x: gameSize.x / 2, y: gameSize.y - this.size.x };
+  };
+
+  Player.prototype = {
+    update: function() {
+      
+    }
+  }
+
   window.onload = function() {
     new Game("screen");
   };
