@@ -35,7 +35,11 @@
     this.center = { x: gameSize.x / 2, y: gameSize.y - this.size.x };
   };
 
-  
+  Player.prototype = {
+    update: function() {
+
+    }
+  };
 
   window.onload = function() {
     new Game("screen");
