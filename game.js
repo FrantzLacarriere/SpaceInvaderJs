@@ -35,6 +35,7 @@
     this.game = game;
     this.size = { x: 15, y:15 };
     this.center = { x: gameSize.x / 2, y: gameSize.y - this.size.x };
+    this.keyboader = new Keyboarder();
   };
 
   Player.prototype = {
@@ -62,6 +63,12 @@
       keyState[e.keyCode] = false;
     };
   };
+
+  this.isDown = function(keyCode) {
+    return keyState[keyCode] === true;
+  };
+
+  this.KEYS = { LEFT: 37, RIGHT: 39, SPACE: 32 }
 
   window.onload = function() {
     new Game("screen");
