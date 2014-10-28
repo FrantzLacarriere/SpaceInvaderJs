@@ -50,6 +50,19 @@
                     body.size.x, body.size.y);
   };
 
+  //module to handle keyboard input
+  var keyboader = function() {
+    var keyState = {};
+
+    window.onkeydown = function(e) {
+      keyState[e.keyCode] = true;
+    };
+
+    window.onkeyup = function(e) {
+      keyState[e.keyCode] = false;
+    };
+  };
+
   window.onload = function() {
     new Game("screen");
   };
