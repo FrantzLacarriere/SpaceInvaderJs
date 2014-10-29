@@ -46,7 +46,7 @@
     update: function() {
       if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT))
         this.center.x -= 2;
-    } else if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT))
+    } else if (this.keyboarder.isDown(this.keyboarder.KEYS.RIGHT))
         this.center.x += 2;
     }
   };
