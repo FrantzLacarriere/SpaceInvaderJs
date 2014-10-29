@@ -6,6 +6,7 @@
     //stores the width and height of the canvas
     var gameSize = { x: canvas.width, y: canvas.height };
 
+    this.bodies = [new Player(this, gameSize)]
 
     var self = this;
     //function the runs all the main game logic
