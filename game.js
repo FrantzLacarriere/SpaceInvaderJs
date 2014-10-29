@@ -21,10 +21,13 @@
 
   Game.prototype = {
     update: function() {
-
+      for (var i = 0; i < this.bodies.length; i++) {
+        this.bodies[i].update());
+      };
     },
 
     draw: function(screen, gameSize) {
+      screen.clearRect(0, 0, gameSize.x, gameSize.y)
       for (var i = 0; i < this.bodies.length; i++) {
         drawRect(screen, this.bodies[i]);
       }
@@ -36,12 +39,15 @@
     this.game = game;
     this.size = { x: 15, y:15 };
     this.center = { x: gameSize.x / 2, y: gameSize.y - this.size.x };
-    this.keyboader = new Keyboarder();
+    this.keyboarder = new Keyboarder();
   };
 
   Player.prototype = {
     update: function() {
-
+      if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT))
+        this.center.x -= 2;
+    } else if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT))
+        this.center.x += 2;
     }
   };
 
@@ -53,7 +59,7 @@
   };
 
   //module to handle keyboard input
-  var keyboader = function() {
+  var keyboarder = function() {
     var keyState = {};
 
     window.onkeydown = function(e) {
